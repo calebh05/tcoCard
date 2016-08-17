@@ -1,21 +1,9 @@
-<?php 
-$pagetitle="My page";
-include('inc/headerPay.php');
-?>
-<body class="loading">
-    <div id="wrapper">
-      <div id="bg"></div>
-      <div id="overlay"></div>
-      <div id="main">
-              <!-- Header -->
-          <header id="header">
-            <h1>WTRMLN</h1>
 
 
 <?php
 require_once("2checkout-php/lib/Twocheckout.php");
-Twocheckout::privateKey('397081F6-200D-4EE5-A169-293686030BBF');
-Twocheckout::sellerId('901274292');
+Twocheckout::privateKey('2Checkout Priv Key');
+Twocheckout::sellerId('2Checkout Account Number');
 Twocheckout::sandbox(true);  #Uncomment to use Sandbox
 
 
@@ -23,7 +11,7 @@ Twocheckout::sandbox(true);  #Uncomment to use Sandbox
 
 try {
     $charge = Twocheckout_Charge::auth(array(
-        "sellerId" => "901274292",
+        "sellerId" => "",
         "li_0_merchant_order_id" => "1",
         "type" => "product",
         "token"      => $_POST['token'],
@@ -71,6 +59,3 @@ try {
 }
 ?>
 
-            </header>
-
-<?php include('inc/footerPay.php'); ?>

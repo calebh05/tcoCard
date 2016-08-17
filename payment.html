@@ -3,19 +3,14 @@
   <head>
     <title>WTRMLN</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
-   <link rel="stylesheet" href="/assets/css/pay.css" />
-          <link rel="stylesheet" href="/css/style.css"> 
-
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
   </head>
-<body class="loading">
-    <div class="demo-container">
-    <div class="card-wrapper"></div>
-    <div class="form-container active"> 
+<body>
 
 
         <style>
@@ -73,12 +68,9 @@
       }
 
     </style>
-
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
-
+    <div class="demo-container">
+    <div class="card-wrapper"></div>
+    <div class="form-container active"> 
 
       <form id="myCCForm" action="paymentProduction.php" method="post">
         <input name="token" type="hidden" value="" />
@@ -107,15 +99,13 @@
       <input type="hidden" name="addrLine1" value="102 FourFive St" />
       <input type="hidden" name="city" value="Cbus"/>
       <input type="hidden" name="state" value="Ohio"/>
-       <input type="hidden" name="zipCode" value="12345"/>
+      <input type="hidden" name="zipCode" value="12345"/>
       <input type="hidden" name="country" value="USA"/>
-      <input type="hidden" name="email" value="caleb@hess.com"/>
+      <input type="hidden" name="email" value="email@user.com"/>
   <!--  Phone Number<input type="hidden" name="phoneNumber" value="" /> !-->
 
        <input text-align:center; vertical-align:middle placeholder="Cardholder Name" id="customer" name="customer" type="text" value="" />
        <input text-align:center; vertical-align:middle placeholder="Card Number" id="number" type="text" value=""  />
-
-
         <input text-align:center; vertical-align:middle placeholder="MM / YYYY" id="expiry" type="text" value=""/>
         <input text-align:center; vertical-align:middle placeholder="CVV" id="cvc" type="text" value="" autocomplete="off" />
         <input type="submit" text-align:center; vertical-align:middle value="Submit" />
@@ -123,12 +113,15 @@
 
 </form>
 
-
-
 </div>
 </div>
+
 <script>
+
+ // Set JS Globals for expiry.
 var expMonth, expYear
+
+
   // Called when token created successfully.
   var successCallback = function(data) {
     var myForm = document.getElementById('myCCForm');
@@ -151,19 +144,23 @@ var expMonth, expYear
     }
   };
 
+
   var tokenRequest = function() {
-    // Setup token request arguments
+
+        // Set expiry, one input to two var's via .slice
        var expiry = document.getElementById("expiry").value;
        var expMonth = expiry.slice(0, 2);
        var expYear = expiry.slice(5, 9); 
 
+
+    // Setup token request arguments
     var args = {
-      sellerId: "901274292",
-      publishableKey: "23D1DB95-25E0-4AEF-BAEE-74A69B8E8582",
+      sellerId: "2Checkout Account Number",
+      publishableKey: "2Checkout Pub Key",
       ccNo: $("#number").val(),
       cvv: $("#cvc").val(),
-      expMonth: expMonth,
-      expYear: expYear
+      expMonth: expMonth,    // $("#expMonth").val(), by default
+      expYear: expYear        // $("#expYear").val(), by default
     };
 
     // Make the token request
@@ -192,25 +189,17 @@ var expMonth, expYear
 
 });
     </script>
-    <div id="wrapper">
-      <div id="bg"></div>
-      <div id="overlay"></div>
-      <div id="main">
 
 
 
-</div>
+
 
 
                 <!-- Footer -->
                     <footer id="footer">
                         <span class="copyright">&copy; <a href="http://wtrmln.net">WTRMLN</a></span>
                     </footer>
-                                  <script>
-      window.onload = function() { document.body.className = ''; }
-      window.ontouchmove = function() { return false; }
-      window.onorientationchange = function() { document.body.scrollTop = 0; }
-    </script>
+
 
     </body>
 </html>
