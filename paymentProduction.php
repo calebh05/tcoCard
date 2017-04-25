@@ -2,8 +2,8 @@
 
 <?php
 require_once("2checkout-php/lib/Twocheckout.php");
-Twocheckout::privateKey('2Checkout Priv Key');
-Twocheckout::sellerId('2Checkout Account Number');
+Twocheckout::privateKey('397081F6-200D-4EE5-A169-293686030BBF');
+Twocheckout::sellerId('901274292');
 Twocheckout::sandbox(true);  #Uncomment to use Sandbox
 
 
