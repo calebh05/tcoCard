@@ -7,8 +7,8 @@
     <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+      <script src="https://2checkout.com/checkout/api/2co.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
   </head>
 <body>
 
@@ -70,8 +70,7 @@
     </style>
     <div class="demo-container">
     <div class="card-wrapper"></div>
-    <div class="form-container active"> 
-
+    <div class="form-container active">
       <form id="myCCForm" action="paymentProduction.php" method="post">
         <input name="token" type="hidden" value="" />
 
@@ -117,9 +116,8 @@
 </div>
 
 <script>
-
  // Set JS Globals for expiry.
-var expMonth, expYear
+var expMonth, expYear;
 
 
   // Called when token created successfully.
@@ -155,8 +153,8 @@ var expMonth, expYear
 
     // Setup token request arguments
     var args = {
-      sellerId: "901274292",
-      publishableKey: "23D1DB95-25E0-4AEF-BAEE-74A69B8E8582",
+      sellerId: "102557782",
+      publishableKey: "2B2F62D0-D951-40A9-B383-24C9AD4848BE",
       ccNo: $("#number").val(),
       cvv: $("#cvc").val(),
       expMonth: expMonth,    // $("#expMonth").val(), by default
@@ -169,7 +167,7 @@ var expMonth, expYear
 
   $(function() {
     // Pull in the public encryption key for our environment
-    TCO.loadPubKey('sandbox');
+      TCO.loadPubKey('production');
 
     $("#myCCForm").submit(function(e) {
       // Call our token request function

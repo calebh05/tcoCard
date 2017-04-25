@@ -2,9 +2,9 @@
 
 <?php
 require_once("2checkout-php/lib/Twocheckout.php");
-Twocheckout::privateKey('397081F6-200D-4EE5-A169-293686030BBF');
-Twocheckout::sellerId('901274292');
-Twocheckout::sandbox(true);  #Uncomment to use Sandbox
+Twocheckout::privateKey('443EE341-9F38-4002-876B-FA486AA1FDCB');
+Twocheckout::sellerId('102557782');
+Twocheckout::sandbox(false);  #Uncomment to use Sandbox
 
 
 
@@ -13,10 +13,10 @@ try {
     $charge = Twocheckout_Charge::auth(array(
         "sellerId" => "",
         "li_0_merchant_order_id" => "1",
-        "type" => "product",
+        "type"       => "product",
         "token"      => $_POST['token'],
         "currency"   => "USD",
-        "total" => "1.00",
+        "total"      => "1.00",
 
        "lineItems" => array(
            "0" => array(
@@ -42,10 +42,10 @@ try {
     if ($charge['response']['responseCode'] == 'APPROVED') {
 
         
-        $sNumber = $charge['response']['orderNumber']; 
+        $sNumber = $charge['response']['orderNumber'];
         # $json = json_encode(array('data' => $charge));
 
-        echo "<p>Sale Number: "; echo '<p><a href="saleInfo.php?sale_id=' . $sNumber . '">' . $charge['response']['orderNumber']. '</a></p>'; // Link to JSON payload data
+        echo "<p>Sale Number: "; echo '<p><a href="sData/' . $sNumber . '.json">' . $charge['response']['orderNumber']. '</a></p>'; // Link to JSON payload data
 
         echo "<p>Amount: "; print_r($charge['response']['total']); "<pre/>"; //print total amount $0.00
         echo "<p>Code: "; print_r($charge['response']['responseCode']); "<pre/>"; //print responseCode
@@ -59,3 +59,10 @@ try {
 }
 ?>
 
+<html>
+<h1> isn't fully working yet</h1>
+<form id ='info' action='../tcoCard/sData/<?php echo $_GET['sale_id']; ?>' method='post'>
+    Sale ID: <input type="text" id="sale_id" value="<?php echo "$sNumber"?>">
+    <input type="submit" value="submit">
+</form>
+</html>
