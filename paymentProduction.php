@@ -1,11 +1,11 @@
-
-
 <?php
+
 require_once("2checkout-php/lib/Twocheckout.php");
 Twocheckout::privateKey('443EE341-9F38-4002-876B-FA486AA1FDCB');
 Twocheckout::sellerId('102557782');
 Twocheckout::sandbox(false);  #Uncomment to use Sandbox
 Twocheckout::format('json');
+
 try {
     $charge = Twocheckout_Charge::auth(array(
         "sellerId" => "",
