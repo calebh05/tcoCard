@@ -5,10 +5,7 @@ require_once("2checkout-php/lib/Twocheckout.php");
 Twocheckout::privateKey('443EE341-9F38-4002-876B-FA486AA1FDCB');
 Twocheckout::sellerId('102557782');
 Twocheckout::sandbox(false);  #Uncomment to use Sandbox
-
-
-
-
+Twocheckout::format('json');
 try {
     $charge = Twocheckout_Charge::auth(array(
         "sellerId" => "",
@@ -60,9 +57,9 @@ try {
 ?>
 
 <html>
-<h1> isn't fully working yet</h1>
-<form id ='info' action='../tcoCard/sData/<?php echo $_GET['sale_id']; ?>' method='post'>
-    Sale ID: <input type="text" id="sale_id" value="<?php echo "$sNumber"?>">
+<h1> Section Below is WIP.</h1>
+<form id ='info' action='../tcoCard/sData/<?php echo "<pre>"; $_GET['sale_id']; echo "</pre>"?>' method='post'>
+    Sale ID: <input type="text" id="sale_id" value='<?php echo "<pre>"; $_GET['sale_id']; echo "</pre>"?>'>
     <input type="submit" value="submit">
 </form>
 </html>
