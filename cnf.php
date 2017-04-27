@@ -2,5 +2,5 @@
 
 echo "<pre>"; echo "Hello, World!"; echo "</pre>";
 
-$_SERVER["DOCUMENT_ROOT"] = '../tcoCard/tcoCard/';
+$TCO_LIB = '/Applications/MAMP/htdocs/tcoCard/tcoCard/';
 $INC_DIR = '/Applications/MAMP/htdocs/tcoCard/tcoCard/includes/';

@@ -1,6 +1,7 @@
 <?php
 
-require_once("2checkout-php/lib/Twocheckout.php");
+require_once($TCO_LIB. '2checkout-php/lib/Twocheckout.php');
+/*require_once("2checkout-php/lib/Twocheckout.php");*/
 Twocheckout::privateKey('443EE341-9F38-4002-876B-FA486AA1FDCB');
 Twocheckout::sellerId('102557782');
 Twocheckout::sandbox(false);  #Uncomment to use Sandbox
