@@ -4,5 +4,6 @@
     <title>CoverMy2CheckoutGate</title>
     <meta name="description" content="so meta">
     <meta name="author" content="Caleb">
+
 </head>
 <body>

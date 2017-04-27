@@ -1,7 +1,7 @@
 <?php
-$INC_DIR = $_SERVER["DOCUMENT_ROOT"]. "../tcoCard/tcoCard/includes/";
+$INC_DIR = "/Applications/MAMP/htdocs/tcoCard/tcoCard/includes/";
 require($INC_DIR. "header.php"); ?>
 
-echo "Hello, World!";
+<h1> WIP </h1>
 
 <?php require($INC_DIR. "footer.php"); ?>
