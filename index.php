@@ -1,7 +1,7 @@
-<?php
-$INC_DIR = "/Applications/MAMP/htdocs/tcoCard/tcoCard/includes/";
-require($INC_DIR. "header.php"); ?>
+<?php /*$INC_DIR = '/tcoCard/tcoCard/includes/';*/
+($INC_DIR. 'header.php'); ?>
 
-<h1> WIP </h1>
+<h1>Hello, World!</h1>
+<h2>wip</h2>
 
-<?php require($INC_DIR. "footer.php"); ?>
+<?php ($INC_DIR. "footer.php"); ?>

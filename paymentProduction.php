@@ -4,7 +4,7 @@ require_once("2checkout-php/lib/Twocheckout.php");
 Twocheckout::privateKey('443EE341-9F38-4002-876B-FA486AA1FDCB');
 Twocheckout::sellerId('102557782');
 Twocheckout::sandbox(false);  #Uncomment to use Sandbox
-Twocheckout::format('json');
+
 
 try {
     $charge = Twocheckout_Charge::auth(array(
@@ -38,11 +38,10 @@ try {
 
     if ($charge['response']['responseCode'] == 'APPROVED') {
 
-        
         $sNumber = $charge['response']['orderNumber'];
         # $json = json_encode(array('data' => $charge));
 
-        echo "<p>Sale Number: "; echo '<p><a href="sData/' . $sNumber . '.json">' . $charge['response']['orderNumber']. '</a></p>'; // Link to JSON payload data
+        echo "<p>Sale Number: "; echo '<p><a href="sData/' . $sNumber .'.json">' . $charge['response']['orderNumber']. '</a></p>'; // Link to JSON payload data
 
         echo "<p>Amount: "; print_r($charge['response']['total']); "<pre/>"; //print total amount $0.00
         echo "<p>Code: "; print_r($charge['response']['responseCode']); "<pre/>"; //print responseCode
