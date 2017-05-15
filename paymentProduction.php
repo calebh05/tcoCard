@@ -57,9 +57,9 @@ try {
 ?>
 
 <html>
-<h1> Section Below is WIP.</h1>
-<form id ='info' action='../tcoCard/sData/<?php echo "<pre>"; $_GET['sale_id']; echo "</pre>"?>' method='post'>
-    Sale ID: <input type="text" id="sale_id" value='<?php echo "<pre>"; $_GET['sale_id']; echo "</pre>"?>'>
+<h5> Section Below is WIP.</h5>
+<form id ='info' action='../tcoCard/sData/<?php echo "<pre>"; echo $sNumber; echo "</pre>"?>' method='post'>
+    Sale ID: <input type="text" id="sale_id" value='<?php echo $sNumber; ?>'>
     <input type="submit" value="submit">
 </form>
 </html>

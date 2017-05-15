@@ -3,117 +3,63 @@
   <head>
     <title>WTRMLN</title>
     <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1" />
       <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
-    <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
       <script src="https://2checkout.com/checkout/api/2co.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   </head>
 <body>
- <style>
-        .demo-container {
-            width: 100%;
-            max-width: 350px;
-            margin: 50px auto;
-            z-index: 9;
-            position: relative;
-        }
 
-        form {
-            margin: 30px;
-            z-index: 9;
-            position: relative;
-       }
-        input {
-            width: 200px;
-            margin: 10px auto;
-            display: block;
-            z-index: 9;
-            position: relative;
-            color: black;
-            font-family: Tahoma;
-            text-align: center;
-            border-radius: 5px; 
-           -moz-border-radius: 5px; 
-           -webkit-border-radius: 5px; 
-            border: 1px solid #5192C4;
-            color: #000000;
-            background: #ffffff;
-        }
 
-      input:hover {
-            background: #ffffff;
-            background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
-            background-image: -moz-linear-gradient(top, #ffffff, #ffffff);
-            background-image: -ms-linear-gradient(top, #ffffff, #ffffff);
-            background-image: -o-linear-gradient(top, #ffffff, #ffffff);
-            background-image: linear-gradient(to bottom, #ffffff, #ffffff);
-            text-decoration: none;
-        }
-      select {
-            display: inline-block;
-            z-index: 9;
-            position: relative;
-            padding:5px;
-            color: black;
-            font-family: Tahoma;
-            text-align: center;
-            border-radius: 5px; 
-            color: #000000;
-            background: #ffffff;
 
-      }
 
-    </style>
     <div class="demo-container">
     <div class="card-wrapper"></div>
+
+
+</div>
     <div class="form-container active">
-      <form id="myCCForm" action="paymentProduction.php" method="post">
-        <input name="token" type="hidden" value="" />
 
-  <!-- PRODUCT INFO !-->
-        <input type='hidden' name="name" value='Cake'>
-        <input type='hidden' name='type' value='product'>
-        <input type='hidden' name='price' value='1.00'>
-        <input type='hidden' name='quantity' value='1'>
-        <input type='hidden' name='startupFee' value='0.00'>
-        <input type='hidden' name='tangible' value='N'>
+        <form class="pure-form pure-form-stacked" id="myCCForm" action="paymentProduction.php" method="post">
+            <input name="token" type="hidden" value="" />
 
+            <!-- PRODUCT INFO !-->
+            <input type='hidden' name="name" value='Cake'>
+            <input type='hidden' name='type' value='product'>
+            <input type='hidden' name='price' value='1.00'>
+            <input type='hidden' name='quantity' value='1'>
+            <input type='hidden' name='startupFee' value='0.00'>
+            <input type='hidden' name='tangible' value='N'>
 
-  <!-- PRODUCT OPTIONS !-->
-  <!--
-      <input type='hidden' name="name" value='Cookies'>
-      <input type='hidden' name="productId" value='yum'>
-      <input type='hidden' name="quantity" value='1'>
-      <input type='hidden' name="price" value='0.00'>
-      <input type='hidden' name="startupFee" value='0.00'>
-      <input type='hidden' name="tangible" value='N'>
-!-->
+            <!-- PRODUCT OPTIONS !-->
+            <!--
+                <input type='hidden' name="name" value='Cookies'>
+                <input type='hidden' name="productId" value='yum'>
+                <input type='hidden' name="quantity" value='1'>
+                <input type='hidden' name="price" value='0.00'>
+                <input type='hidden' name="startupFee" value='0.00'>
+                <input type='hidden' name="tangible" value='N'>
+          !-->
 
-  <!-- billingAddr !-->
-      <input type="hidden" id="name" value=""/>
-      <input type="hidden" name="addrLine1" value="102 FourFive St" />
-      <input type="hidden" name="city" value="Cbus"/>
-      <input type="hidden" name="state" value="Ohio"/>
-      <input type="hidden" name="zipCode" value="12345"/>
-      <input type="hidden" name="country" value="USA"/>
-      <input type="hidden" name="email" value="email@user.com"/>
-  <!--  Phone Number<input type="hidden" name="phoneNumber" value="" /> !-->
+            <!-- billingAddr !-->
+            <input type="hidden" id="name" value=""/>
+            <input type="hidden" name="addrLine1" value="102 FourFive St" />
+            <input type="hidden" name="city" value="Cbus"/>
+            <input type="hidden" name="state" value="Ohio"/>
+            <input type="hidden" name="zipCode" value="12345"/>
+            <input type="hidden" name="country" value="USA"/>
+            <input type="hidden" name="email" value="email@user.com"/>
+            <!--  Phone Number<input type="hidden" name="phoneNumber" value="" /> !-->
 
-       <input text-align:center; vertical-align:middle placeholder="Cardholder Name" id="customer" name="customer" type="text" value="" />
-       <input text-align:center; vertical-align:middle placeholder="Card Number" id="number" type="text" value=""  />
-        <input text-align:center; vertical-align:middle placeholder="MM / YYYY" id="expiry" type="text" value=""/>
-        <input text-align:center; vertical-align:middle placeholder="CVV" id="cvc" type="text" value="" autocomplete="off" />
-        <input type="submit" text-align:center; vertical-align:middle value="Submit" />
+            <fieldset>
+                <input class="pure-input-1-1" placeholder="Cardholder Name" id="customer" name="customer" type="text" value="" />
+                <input class="pure-input-1-1" placeholder="Card Number" id="number" type="text" value=""  />
+                <input class="pure-input-1-1" placeholder="MM / YYYY" id="expiry" type="text" value=""/>
+                <input class="pure-input-1-1" placeholder="CVV" id="cvc" type="text" value="" autocomplete="off" />
+                <input class="pure-button" type="submit" value="Checkout" />
+            </fieldset>
 
-
-</form>
-
-</div>
-</div>
-
+        </form>
 <script>
  // Set JS Globals for expiry.
 var expMonth, expYear;
@@ -152,8 +98,8 @@ var expMonth, expYear;
 
     // Setup token request arguments
     var args = {
-      sellerId: "102557782",
-      publishableKey: "2B2F62D0-D951-40A9-B383-24C9AD4848BE",
+      sellerId: '102557782',
+      publishableKey: '2B2F62D0-D951-40A9-B383-24C9AD4848BE',
       ccNo: $("#number").val(),
       cvv: $("#cvc").val(),
       expMonth: expMonth,    // $("#expMonth").val(), by default
